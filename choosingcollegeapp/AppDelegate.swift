@@ -15,6 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().barTintColor = UIColor.purple
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.yellow]
+        application.statusBarStyle = .lightContent
+        
+        let controller = QuestionController()
+        let navigationController = UINavigationController(rootViewController: controller)
+        window?.rootViewController = navigationController
+        
         // Override point for customization after application launch.
         return true
     }
